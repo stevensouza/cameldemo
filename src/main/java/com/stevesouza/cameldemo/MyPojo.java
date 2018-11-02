@@ -3,6 +3,7 @@ package com.stevesouza.cameldemo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+// lombok annotations
 @Data
 @AllArgsConstructor
 public class MyPojo {

@@ -1,12 +1,10 @@
 package com.stevesouza.cameldemo;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.apache.camel.Body;
 import org.apache.camel.Handler;
 import org.apache.camel.Header;
-import org.apache.camel.Processor;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

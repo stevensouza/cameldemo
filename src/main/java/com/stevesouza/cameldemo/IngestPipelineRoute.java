@@ -8,12 +8,12 @@ public class IngestPipelineRoute extends SpringRouteBuilder {
     public void configure() throws Exception {
         // intercept().process(new MyInterceptor)
         // might allow us to track erroprs after each stage
-            from("jms:queue:{{amq.subscribe}}")
-                    .bean("JsonCorrelationIdAdder")
-                    .to("mongodb:insert")
-                    .toD("{{amq.shadowtopic}}, {{kafka.topic}}")
-                    .setBody().constant("{id=id, amq=success, kafka=success}")
-                    .to("direct:ingestsuccesstatus");
+        from("jms:queue:{{amq.subscribe}}")
+                .bean("JsonCorrelationIdAdder")
+                .to("mongodb:insert")
+                .toD("{{amq.shadowtopic}}, {{kafka.topic}}")
+                .setBody().constant("{id=id, amq=success, kafka=success}")
+                .to("direct:ingestsuccesstatus");
 
     }
 }
