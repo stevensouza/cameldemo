@@ -1,2 +1,2 @@
 # cameldemo
-- uses camel, activemq, mongo, docker
+- uses camel, jms/activemq, mongo, docker
