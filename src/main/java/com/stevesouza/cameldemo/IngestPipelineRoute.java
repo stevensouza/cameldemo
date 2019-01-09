@@ -10,7 +10,7 @@ public class IngestPipelineRoute extends SpringRouteBuilder {
         // might allow us to track erroprs after each stage
         from("jms:queue:{{amq.subscribe}}")
                 .bean("JsonCorrelationIdAdder")
-                .to("mongodb:insert")
+                .to("mongodb:insert") // note this i believe is psuedocode.  look at MyJmsSubscriber for the real way to insert into mongodb
                 .toD("{{amq.shadowtopic}}, {{kafka.topic}}")
                 .setBody().constant("{id=id, amq=success, kafka=success}")
                 .to("direct:ingestsuccesstatus");
